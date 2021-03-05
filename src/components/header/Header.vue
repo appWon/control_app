@@ -10,7 +10,11 @@
 
 <script lang="ts">
 import { Vue, Component } from "vue-property-decorator";
+import { UserInfoState } from '@/store/user/types';
+import { State } from 'vuex-class';
+
 import AvartarMenu from "./AvatarMenu.vue";
+
 
 @Component({
   components : {
@@ -19,6 +23,11 @@ import AvartarMenu from "./AvatarMenu.vue";
 })
 
 export default class Header extends Vue {
-  private isMenuToggle  = false;
+  @State('userInfo')
+  user!: UserInfoState;
+
+    private mounted() {
+      console.log("----------------------",this.user);
+    }
 }
 </script>
