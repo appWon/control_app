@@ -1,28 +1,20 @@
 <template>
   <div>
-    <Header ></Header>
+    <Header />
+    <DataTable />
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
 import Header from "@/components/header/Header.vue";
-import { namespace, State, Action, Getter } from 'vuex-class';
-
-const serverState = namespace('CountStore');
+import DataTable from "@/components/dataTable/dataTable.vue";
 
 @Component({
   components: {
-    Header
+    Header,
+    DataTable
   }
 })
-export default class Home extends Vue {
-
-  @serverState.Getter('num')
-  private num!: number;
-
-  @serverState.Action('incr')
-  private incr!: (delta: number) => void;
-
-}
+export default class Home extends Vue {} 
 </script>

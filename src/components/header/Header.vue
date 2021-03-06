@@ -1,6 +1,6 @@
 <template>
   <v-card color="grey lighten-4">
-    <v-toolbar>
+    <v-toolbar class="elevation-0">
       <v-app-bar-nav-icon></v-app-bar-nav-icon>
       <v-spacer></v-spacer>
       <AvartarMenu />
@@ -10,8 +10,8 @@
 
 <script lang="ts">
 import { Vue, Component } from "vue-property-decorator";
-import { UserInfoState } from '@/store/user/types';
-import { State } from 'vuex-class';
+// import { UserInfoState } from '@/store/user/types';
+// import { State } from 'vuex-class';
 
 import AvartarMenu from "./AvatarMenu.vue";
 
@@ -22,12 +22,5 @@ import AvartarMenu from "./AvatarMenu.vue";
   }
 })
 
-export default class Header extends Vue {
-  @State('userInfo')
-  user!: UserInfoState;
-
-    private mounted() {
-      console.log("----------------------",this.user);
-    }
-}
+export default class Header extends Vue {}
 </script>

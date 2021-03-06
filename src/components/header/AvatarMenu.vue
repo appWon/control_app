@@ -16,6 +16,7 @@
         </v-avatar>
       </v-btn>
     </template>
+
     <v-card>
       <v-list-item-content class="justify-center">
         <div class="mx-auto text-center">
@@ -38,18 +39,19 @@
         </div>
       </v-list-item-content>
     </v-card>
+    
   </v-menu>
 </template>
 
 
 <script lang="ts">
 import { Vue, Component } from "vue-property-decorator";
-import { State, Action } from 'vuex-class';
+import { Action,Getter } from 'vuex-class';
 import { UserInfoState } from '@/store/user/types';
 @Component
 export default class AvatarMenu extends Vue {
-
-  @State('userInfo') user!: UserInfoState;
+  @Getter('userInfo/getUserInfo') user!:UserInfoState;
   @Action('userInfo/signOut') signOut:any;
+
 }
 </script>

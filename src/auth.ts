@@ -9,8 +9,11 @@ firebase.auth().onAuthStateChanged((user) =>{
       userEmail: user.email,
       imgURL: user.photoURL,
     })
-    router.push('/')
+
+    //@ts-ignore
+    if(router.history.current.path === '/login') router.push('/')
   } else {
-    router.push('/login')
+    //@ts-ignore
+    if(router.history.current.path !== '/login') router.push('/login')
   }
 });

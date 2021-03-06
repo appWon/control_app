@@ -12,8 +12,7 @@
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
-import { State, Action } from 'vuex-class';
-import { UserInfoState } from '@/store/user/types';
+import { Action } from 'vuex-class';
 
 @Component
 export default class Home extends Vue {
