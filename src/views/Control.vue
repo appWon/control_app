@@ -1,7 +1,7 @@
 <template>
   <div>
     <Header />
-    <DataTable />
+    <ChartLayout />
   </div>
 </template>
 

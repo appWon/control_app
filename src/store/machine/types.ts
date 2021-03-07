@@ -8,6 +8,6 @@ export interface MachineInfo {
 }
 
 export interface MachineInfoState {
-  machineInfo?: MachineInfo;
+  machineInfo?: MachineInfo[];
   error: boolean;
 }

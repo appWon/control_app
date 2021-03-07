@@ -6,8 +6,8 @@ import moment from 'moment'
 import firebase from 'firebase';
 
 export const actions: ActionTree<MachineInfoState, RootState> = {
-  readDataList({ commit }){
-    firebase.database().ref('machine_list').on("value", ( res ) => {
+  async readDataList({ commit }){
+    await firebase.database().ref('machine_list').on("value", ( res ) => {
       const data = res.val(); //object
       const list = Object.keys(data).map( list => ({ key:list, ...data[list]}))
       commit('SET_MACHINE_LIST',list)
