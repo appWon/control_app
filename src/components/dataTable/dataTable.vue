@@ -79,14 +79,14 @@
 <script lang="ts">
 import { Vue, Component } from "vue-property-decorator";
 import { State, Action } from 'vuex-class';
-import { MachineInfo,MachineInfoState } from '@/store/machine/types'
+import { MachineInfo } from '@/store/machine/types'
 
 @Component
 export default class DataTable extends Vue {
-  @State('machineInfo') machine: any;
-  @Action('machineInfo/readDataList') readDataList:any
-  @Action('machineInfo/updateMachineData') updateMachineData:any
-  @Action('machineInfo/removeMachineData') removeMachineData:any
+  @State('machineInfo') machine: MachineInfo | undefined;
+  @Action('machineInfo/readDataList') readDataList!:any;
+  @Action('machineInfo/updateMachineData') updateMachineData!:any;
+  @Action('machineInfo/removeMachineData') removeMachineData!:any;
 
   private headers = [          
     { text: '모델', value: 'model', align: 'center' },
@@ -102,11 +102,11 @@ export default class DataTable extends Vue {
   private removeData: object = {};
 
   created(){
-    this.readDataList()
+    this.readDataList;
   }
 
-  updateItem (item: MachineInfo) {
-    this.updateMachineData(item)
+  updateItem (item: MachineInfo): void {
+    this.updateMachineData(item);
   }
 
   removeItem (item: MachineInfo) {

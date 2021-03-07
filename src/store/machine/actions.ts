@@ -6,15 +6,15 @@ import moment from 'moment'
 import firebase from 'firebase';
 
 export const actions: ActionTree<MachineInfoState, RootState> = {
-  readDataList({ commit }){
+  readDataList({ commit }): void{
     firebase.database().ref('machine_list').on("value", ( res ) => {
-      const data = res.val(); //object
-      const list = Object.keys(data).map( list => ({ key:list, ...data[list]}))
+      const data: object = res.val(); //object
+      const list: Array<MachineInfo> = Object.keys(data).map( list => ({ key:list, ...(data as any)[list]}))
       commit('SET_MACHINE_LIST',list)
     });
   },
 
-  updateMachineData ({ commit }, data : MachineInfo){
+  updateMachineData ({ commit }, data : MachineInfo): void{
     const updateData = {
       manager: data.manager,
       model: data.model,
@@ -28,12 +28,12 @@ export const actions: ActionTree<MachineInfoState, RootState> = {
     });
   },
 
-  removeMachineData({ commit }, data : MachineInfo){
+  removeMachineData({ commit }, data : MachineInfo): void{
     console.log(data.key)
     firebase.database().ref('machine_list').child(data.key).remove();
   },
   
-  setData() {
+  setData(): void{
     firebase.database().ref('machine_list').push(
       {
         model: `IPHONE-${Math.floor(Math.random() * 10) + 100}`,

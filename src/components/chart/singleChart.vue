@@ -1,6 +1,6 @@
 <script lang="ts">
   import {Component, Mixins, Prop} from "vue-property-decorator";
-  import {Line, mixins, Doughnut} from "vue-chartjs";
+  import {mixins, Doughnut} from "vue-chartjs";
   import {ChartData, ChartOptions} from "chart.js";
 
   @Component

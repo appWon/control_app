@@ -22,7 +22,6 @@
 <script lang="ts">
   import { Component, Vue } from "vue-property-decorator";
   import { Getter } from 'vuex-class';
-  
   import Chart from "./singleChart.vue";
 
   @Component({
