@@ -23,6 +23,7 @@ export default class Home extends Vue {
 </script>
 <style lang="scss">
   img {
+    width: 300px;
     cursor: pointer;
   }
 </style>

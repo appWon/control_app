@@ -16,7 +16,7 @@ const routes: Array<RouteConfig> = [
     component: () => import("../views/SignPage.vue")
   },
   {
-    path: "/test",
+    path: "/control",
     name: "ControlPage",
     component: () => import("../views/Control.vue")
   }

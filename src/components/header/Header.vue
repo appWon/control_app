@@ -31,7 +31,7 @@
 
           <v-list-item @click="subPage('ControlPage')">
             <v-list-item-icon>
-              <v-icon>mdi-account</v-icon>
+              <v-icon>mdi-brightness-7</v-icon>
             </v-list-item-icon>
             <v-list-item-title>관제 페이지</v-list-item-title>
           </v-list-item>

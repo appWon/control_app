@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="flex">
     <div class="border">
       <v-card class="pb-5 ma-5">
         <v-card-title>
@@ -37,9 +37,12 @@
 </script>
 
 <style lang="scss" scoped>
-  .border{
-    display: inline-block;
-    width: 45%;
-
+  .flex{
+    display: flex;
+    .border{
+      display: flex;
+      align-items: center;
+      height: 100%;
+    }
   }
 </style>
