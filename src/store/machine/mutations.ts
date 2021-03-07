@@ -3,7 +3,7 @@ import { MachineInfoState, MachineInfo } from './types';
 
 
 export const mutations: MutationTree<MachineInfoState> = {
-  SET_MACHINE_LIST(state, machineList:MachineInfo){
+  SET_MACHINE_LIST(state, machineList){
     state.machineInfo = machineList
   }
 };
